@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:JSWebView.Controls"
+             mc:Ignorable="d"
+             x:Class="JSWebView.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Eval JavaScript" Command="{Binding EvalJS}"/>
+            <Button Text="Eval JavaScript back to C#" Command="{Binding EvalJS2}"/>
+        </StackLayout>
+
+        <controls:CustomWebView Grid.Row="1" Source="{Binding CustomSource}" EvaluateJavascript="{Binding EvaluateJavascript}, Mode=OneWayToSource}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+    </Grid>
+
+</ContentPage>
